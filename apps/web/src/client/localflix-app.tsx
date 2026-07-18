@@ -4,6 +4,7 @@ import { memo, useCallback, useEffect, useReducer, useRef, useState } from "reac
 import { LocalFlixLogo } from "./localflix-logo";
 import { profileEntranceDuration } from "./logo-model";
 import { initialPreviewState, previewReducer } from "./preview-model";
+import { playLoginSting, previewSoundLabel } from "./sound-effects";
 import { formatRuntime } from "./ui-model";
 import type { CatalogCard, CatalogRail, HomeCatalog, MediaDetails, Profile } from "./types";
 
@@ -19,7 +20,7 @@ function artworkUrl(itemId: string, kind: "poster" | "backdrop"): string {
   return `/api/artwork/${encodeURIComponent(itemId)}/${kind}`;
 }
 
-function Icon({ name }: { name: "play" | "info" | "search" | "plus" | "close" | "check" | "spark" }) {
+function Icon({ name }: { name: "play" | "info" | "search" | "plus" | "close" | "check" | "spark" | "volume" | "mute" }) {
   const paths = {
     play: <path d="M8 5v14l11-7z" />,
     info: <><circle cx="12" cy="12" r="9" /><path d="M12 11v6M12 8h.01" /></>,
@@ -27,7 +28,9 @@ function Icon({ name }: { name: "play" | "info" | "search" | "plus" | "close" | 
     plus: <path d="M12 5v14M5 12h14" />,
     close: <path d="m6 6 12 12M18 6 6 18" />,
     check: <path d="m5 12 4 4L19 6" />,
-    spark: <><path d="m12 3 1.3 4.3L17 9l-3.7 1.7L12 15l-1.3-4.3L7 9l3.7-1.7z" /><path d="m19 15 .7 2.3L22 18l-2.3.7L19 21l-.7-2.3L16 18l2.3-.7z" /></>
+    spark: <><path d="m12 3 1.3 4.3L17 9l-3.7 1.7L12 15l-1.3-4.3L7 9l3.7-1.7z" /><path d="m19 15 .7 2.3L22 18l-2.3.7L19 21l-.7-2.3L16 18l2.3-.7z" /></>,
+    volume: <><path d="M11 5 6 9H3v6h3l5 4z" /><path d="M15.5 8.5a5 5 0 0 1 0 7M18 6a9 9 0 0 1 0 12" /></>,
+    mute: <><path d="M11 5 6 9H3v6h3l5 4z" /><path d="m16 9 5 5M21 9l-5 5" /></>
   } as const;
   return <svg aria-hidden="true" viewBox="0 0 24 24">{paths[name]}</svg>;
 }
@@ -168,7 +171,48 @@ function DetailModal({ item, profile, onClose, onFavorite, onOpen }: {
   const [favorite, setFavorite] = useState(false);
   const [showSimilar, setShowSimilar] = useState(false);
   const [preview, dispatchPreview] = useReducer(previewReducer, initialPreviewState);
+  const [previewMuted, setPreviewMuted] = useState(false);
+  const [soundBlocked, setSoundBlocked] = useState(false);
+  const previewVideo = useRef<HTMLVideoElement>(null);
   const file = item.files[0];
+
+  const startPreviewPlayback = useCallback((video: HTMLVideoElement) => {
+    video.volume = 0.48;
+    video.muted = previewMuted;
+    void video.play()
+      .then(() => {
+        setSoundBlocked(false);
+        dispatchPreview({ type: "ready" });
+      })
+      .catch(() => {
+        if (previewMuted) {
+          dispatchPreview({ type: "failed" });
+          return;
+        }
+        video.muted = true;
+        setPreviewMuted(true);
+        setSoundBlocked(true);
+        void video.play()
+          .then(() => dispatchPreview({ type: "ready" }))
+          .catch(() => dispatchPreview({ type: "failed" }));
+      });
+  }, [previewMuted]);
+
+  const togglePreviewSound = useCallback(() => {
+    const nextMuted = !previewMuted;
+    const video = previewVideo.current;
+    setPreviewMuted(nextMuted);
+    setSoundBlocked(false);
+    if (!video) return;
+    video.muted = nextMuted;
+    if (!nextMuted) {
+      void video.play().catch(() => {
+        video.muted = true;
+        setPreviewMuted(true);
+        setSoundBlocked(true);
+      });
+    }
+  }, [previewMuted]);
 
   useEffect(() => {
     if (!file || preview.phase !== "waiting") return;
@@ -205,20 +249,33 @@ function DetailModal({ item, profile, onClose, onFavorite, onOpen }: {
         <div className="detail-backdrop" style={{ backgroundImage: `linear-gradient(0deg, #111318 2%, rgba(17,19,24,.2) 65%), url("${artworkUrl(item.id, "backdrop")}")` }}>
           {file && (preview.phase === "loading" || preview.phase === "playing") && (
             <video
+              ref={previewVideo}
               key={`${file.id}-${preview.cycle}`}
               className={`detail-preview ${preview.phase === "playing" ? "is-playing" : ""}`}
               src={file.previewUrl}
-              autoPlay
-              muted
+              muted={previewMuted}
               playsInline
               preload="auto"
-              aria-label={`Silent preview of ${item.title}`}
-              onCanPlay={() => dispatchPreview({ type: "ready" })}
+              aria-label={`Preview of ${item.title}`}
+              onCanPlay={(event) => startPreviewPlayback(event.currentTarget)}
               onEnded={() => dispatchPreview({ type: "ended" })}
               onError={() => dispatchPreview({ type: "failed" })}
             />
           )}
           <button className="round-button close-button" onClick={onClose} aria-label="Close details"><Icon name="close" /></button>
+          {file && (
+            <button
+              className={`round-button preview-sound-button ${soundBlocked ? "is-blocked" : ""}`}
+              onClick={togglePreviewSound}
+              aria-label={previewSoundLabel(previewMuted)}
+              title={soundBlocked ? "Your browser blocked sound. Select to enable it for the next preview." : undefined}
+            >
+              <Icon name={previewMuted ? "mute" : "volume"} />
+            </button>
+          )}
+          <span className="sr-only" aria-live="polite">
+            {soundBlocked ? "Preview is muted because the browser blocked automatic sound." : ""}
+          </span>
           <div className="detail-title-block">
             <p className="eyebrow">{item.kind === "movie" ? "Feature film" : "Series"}</p>
             <h2>{item.title}</h2>
@@ -343,6 +400,7 @@ export default function LocalFlixApp() {
   }, []);
 
   const chooseProfile = useCallback((next: Profile) => {
+    void playLoginSting();
     window.localStorage.setItem(ACTIVE_PROFILE_KEY, next.id);
     setProfile(next);
     setHome(null);

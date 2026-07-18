@@ -8,17 +8,20 @@ describe("on-demand cinematic previews", () => {
     expect(choosePreviewStartSeconds(120_000, () => 1)).toBe(81);
   });
 
-  it("builds a bounded fragmented MP4 transcode that writes only to stdout", () => {
+  it("builds a bounded fragmented MP4 transcode with gently faded stereo audio", () => {
     const args = previewArguments({
       absolutePath: "/movies/Arrival/movie.mkv",
       startSeconds: 42
     });
     expect(args).toEqual(expect.arrayContaining([
       "-ss", "42", "-i", "/movies/Arrival/movie.mkv",
-      "-t", "30", "-an", "-c:v", "libx264",
+      "-t", "30", "-map", "0:v:0", "-map", "0:a:0?",
+      "-c:v", "libx264", "-c:a", "aac", "-ac", "2",
+      "-af", "afade=t=in:st=0:d=0.8,afade=t=out:st=28:d=2",
       "-movflags", "frag_keyframe+empty_moov+default_base_moof",
       "-f", "mp4", "pipe:1"
     ]));
+    expect(args).not.toContain("-an");
     expect(args.join(" ")).toContain("scale=1280:720");
     expect(args.some((arg) => /cache|preview\.mp4/.test(arg))).toBe(false);
   });

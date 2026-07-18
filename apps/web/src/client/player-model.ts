@@ -1,4 +1,44 @@
 export type KeyboardPlayerAction = "toggle" | "backward" | "forward" | "fullscreen" | "mute" | null;
+export type SubtitleSize = "small" | "medium" | "large";
+
+export const SUBTITLE_SIZE_OPTIONS: ReadonlyArray<{ value: SubtitleSize; label: string }> = [
+  { value: "small", label: "Small" },
+  { value: "medium", label: "Medium" },
+  { value: "large", label: "Large" }
+];
+
+export function initialSubtitleId(tracks: ReadonlyArray<{ id: string; isDefault: boolean }>): string {
+  return tracks.find(({ isDefault }) => isDefault)?.id ?? "off";
+}
+
+export function subtitleSizeClass(size: SubtitleSize): string {
+  return `subtitle-size-${size}`;
+}
+
+export function mergeReadySubtitleTracks<T extends { id: string }>(
+  current: readonly T[],
+  ready: T,
+  sourceOrder: readonly string[]
+): T[] {
+  if (current.some(({ id }) => id === ready.id)) return [...current];
+  const position = new Map(sourceOrder.map((id, index) => [id, index]));
+  return [...current, ready].sort(
+    (left, right) => (position.get(left.id) ?? Number.MAX_SAFE_INTEGER) -
+      (position.get(right.id) ?? Number.MAX_SAFE_INTEGER)
+  );
+}
+
+export function nextSubtitleSelection(
+  currentId: string,
+  ready: { id: string; isDefault: boolean },
+  viewerHasChosen: boolean
+): string {
+  return !viewerHasChosen && ready.isDefault ? ready.id : currentId;
+}
+
+export function shouldHandlePlayerShortcut(tagName: string): boolean {
+  return !["A", "BUTTON", "INPUT", "SELECT", "TEXTAREA"].includes(tagName.toUpperCase());
+}
 
 export function keyboardPlayerAction(key: string): KeyboardPlayerAction {
   switch (key.toLowerCase()) {

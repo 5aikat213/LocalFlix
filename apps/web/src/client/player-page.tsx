@@ -1,7 +1,17 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { formatPlayerTime, keyboardPlayerAction, progressPercent } from "./player-model";
+import {
+  formatPlayerTime,
+  keyboardPlayerAction,
+  mergeReadySubtitleTracks,
+  nextSubtitleSelection,
+  progressPercent,
+  shouldHandlePlayerShortcut,
+  SUBTITLE_SIZE_OPTIONS,
+  subtitleSizeClass
+} from "./player-model";
+import type { SubtitleSize } from "./player-model";
 import type { MediaDetails, SubtitleTrack } from "./types";
 
 interface PlaybackInfo {
@@ -38,9 +48,14 @@ export default function PlayerPage({ itemId, profileId, fileId }: { itemId: stri
   const resumeMsRef = useRef(0);
   const lastCheckpointRef = useRef(0);
   const controlsTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const subtitleSelectionTouchedRef = useRef(false);
   const [details, setDetails] = useState<MediaDetails | null>(null);
   const [playback, setPlayback] = useState<PlaybackInfo | null>(null);
   const [readySubtitles, setReadySubtitles] = useState<SubtitleTrack[]>([]);
+  const [subtitleStatus, setSubtitleStatus] = useState<"idle" | "loading" | "ready" | "unavailable">("idle");
+  const [selectedSubtitleId, setSelectedSubtitleId] = useState("off");
+  const [subtitleSize, setSubtitleSize] = useState<SubtitleSize>("medium");
+  const [captionMenuOpen, setCaptionMenuOpen] = useState(false);
   const [playing, setPlaying] = useState(false);
   const [current, setCurrent] = useState(0);
   const [duration, setDuration] = useState(0);
@@ -90,21 +105,57 @@ export default function PlayerPage({ itemId, profileId, fileId }: { itemId: stri
 
   useEffect(() => {
     if (!file) return;
+    const controller = new AbortController();
     let cancelled = false;
+    setReadySubtitles([]);
+    setSelectedSubtitleId("off");
+    subtitleSelectionTouchedRef.current = false;
+    if (file.subtitles.length === 0) {
+      setSubtitleStatus("idle");
+      return () => controller.abort();
+    }
+    setSubtitleStatus("loading");
     const waitForTrack = async (track: SubtitleTrack): Promise<SubtitleTrack | null> => {
       for (let attempt = 0; attempt < 8 && !cancelled; attempt += 1) {
-        const response = await fetch(track.url);
-        if (response.status === 200 && response.headers.get("content-type")?.includes("text/vtt")) return track;
-        if (response.status !== 202) return null;
+        try {
+          const response = await fetch(track.url, { signal: controller.signal });
+          if (response.status === 200 && response.headers.get("content-type")?.includes("text/vtt")) return track;
+          if (response.status !== 202) return null;
+        } catch (caught) {
+          if (controller.signal.aborted) return null;
+          if (attempt === 7) return null;
+        }
         await new Promise((resolve) => setTimeout(resolve, 1200));
       }
       return null;
     };
-    void Promise.all(file.subtitles.map(waitForTrack)).then((tracks) => {
-      if (!cancelled) setReadySubtitles(tracks.filter((track): track is SubtitleTrack => track !== null));
+    const sourceOrder = file.subtitles.map(({ id }) => id);
+    void Promise.all(file.subtitles.map(async (track) => {
+      const available = await waitForTrack(track);
+      if (!available || cancelled) return null;
+      setReadySubtitles((current) => mergeReadySubtitleTracks(current, available, sourceOrder));
+      setSelectedSubtitleId((current) => nextSubtitleSelection(
+        current,
+        available,
+        subtitleSelectionTouchedRef.current
+      ));
+      return available;
+    })).then((tracks) => {
+      if (cancelled) return;
+      const available = tracks.filter((track): track is SubtitleTrack => track !== null);
+      setSubtitleStatus(available.length > 0 ? "ready" : "unavailable");
     });
-    return () => { cancelled = true; };
+    return () => { cancelled = true; controller.abort(); };
   }, [file]);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    const trackElements = Array.from(video.querySelectorAll<HTMLTrackElement>("track[data-track-id]"));
+    trackElements.forEach((element) => {
+      element.track.mode = element.dataset.trackId === selectedSubtitleId ? "showing" : "disabled";
+    });
+  }, [readySubtitles, selectedSubtitleId]);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -178,7 +229,12 @@ export default function PlayerPage({ itemId, profileId, fileId }: { itemId: stri
 
   useEffect(() => {
     const keydown = (event: KeyboardEvent) => {
-      if (event.target instanceof HTMLInputElement || event.target instanceof HTMLSelectElement) return;
+      if (event.key === "Escape" && captionMenuOpen) {
+        event.preventDefault();
+        setCaptionMenuOpen(false);
+        return;
+      }
+      if (event.target instanceof HTMLElement && !shouldHandlePlayerShortcut(event.target.tagName)) return;
       const action = keyboardPlayerAction(event.key);
       if (!action) return;
       event.preventDefault();
@@ -190,19 +246,25 @@ export default function PlayerPage({ itemId, profileId, fileId }: { itemId: stri
     };
     window.addEventListener("keydown", keydown);
     return () => window.removeEventListener("keydown", keydown);
-  }, [seekBy, toggleFullscreen, togglePlayback]);
+  }, [captionMenuOpen, seekBy, toggleFullscreen, togglePlayback]);
 
   const revealControls = useCallback(() => {
     setControlsVisible(true);
     if (controlsTimerRef.current) clearTimeout(controlsTimerRef.current);
-    if (playing) controlsTimerRef.current = setTimeout(() => setControlsVisible(false), 2600);
-  }, [playing]);
+    if (playing && !captionMenuOpen) controlsTimerRef.current = setTimeout(() => setControlsVisible(false), 2600);
+  }, [captionMenuOpen, playing]);
+
+  useEffect(() => {
+    if (!captionMenuOpen) return;
+    setControlsVisible(true);
+    if (controlsTimerRef.current) clearTimeout(controlsTimerRef.current);
+  }, [captionMenuOpen]);
 
   if (error) return <main className="player-error"><strong>Couldn&apos;t play this title.</strong><p>{error}</p><a href="/">Return to LocalFlix</a></main>;
 
   return (
     <main
-      className={`player-shell ${controlsVisible ? "controls-visible" : "controls-hidden"}`}
+      className={`player-shell ${controlsVisible ? "controls-visible" : "controls-hidden"} ${subtitleSizeClass(subtitleSize)}`}
       ref={rootRef}
       onPointerMove={revealControls}
       onClick={revealControls}
@@ -237,7 +299,14 @@ export default function PlayerPage({ itemId, profileId, fileId }: { itemId: stri
         onEnded={() => { setPlaying(false); saveProgress(true); }}
       >
         {readySubtitles.map((track) => (
-          <track key={track.id} kind="subtitles" src={track.url} srcLang={track.language ?? "und"} label={track.label} default={track.isDefault} />
+          <track
+            key={track.id}
+            data-track-id={track.id}
+            kind="subtitles"
+            src={track.url}
+            srcLang={track.language ?? "und"}
+            label={track.label}
+          />
         ))}
       </video>
 
@@ -282,12 +351,71 @@ export default function PlayerPage({ itemId, profileId, fileId }: { itemId: stri
           <span className="player-time">{formatPlayerTime(current)} / {formatPlayerTime(duration)}</span>
           <div className="player-spacer" />
           {nextEpisode?.mediaFileId && <a className="next-episode" href={`/watch/${itemId}?profile=${profileId}&file=${nextEpisode.mediaFileId}`}>Next episode <strong>{nextEpisode.title}</strong></a>}
-          {readySubtitles.length > 0 && (
-            <label className="caption-picker"><PlayerIcon name="captions" /><span className="sr-only">Subtitles</span><select aria-label="Subtitles" defaultValue="off" onChange={(event) => {
-              const video = videoRef.current;
-              if (!video) return;
-              Array.from(video.textTracks).forEach((track, index) => { track.mode = event.target.value === String(index) ? "showing" : "disabled"; });
-            }}><option value="off">Off</option>{readySubtitles.map((track, index) => <option value={String(index)} key={track.id}>{track.label}</option>)}</select></label>
+          {(file?.subtitles.length ?? 0) > 0 && (
+            <div className="subtitle-control">
+              <button
+                className={`caption-button ${selectedSubtitleId !== "off" ? "is-active" : ""}`}
+                onClick={() => setCaptionMenuOpen((open) => !open)}
+                aria-label="Subtitles and caption size"
+                aria-expanded={captionMenuOpen}
+                aria-haspopup="dialog"
+              >
+                <PlayerIcon name="captions" />
+              </button>
+              {captionMenuOpen && (
+                <section className="subtitle-menu" role="dialog" aria-label="Subtitle settings">
+                  <div className="subtitle-menu-heading">
+                    <strong>Subtitles</strong>
+                    {subtitleStatus === "loading" && <span>Preparing…</span>}
+                  </div>
+                  <div className="subtitle-track-options" role="radiogroup" aria-label="Subtitle track">
+                    <button
+                      role="radio"
+                      aria-checked={selectedSubtitleId === "off"}
+                      className={selectedSubtitleId === "off" ? "is-selected" : ""}
+                      onClick={() => {
+                        subtitleSelectionTouchedRef.current = true;
+                        setSelectedSubtitleId("off");
+                      }}
+                    >
+                      Off
+                    </button>
+                    {readySubtitles.map((track) => (
+                      <button
+                        key={track.id}
+                        role="radio"
+                        aria-checked={selectedSubtitleId === track.id}
+                        className={selectedSubtitleId === track.id ? "is-selected" : ""}
+                        onClick={() => {
+                          subtitleSelectionTouchedRef.current = true;
+                          setSelectedSubtitleId(track.id);
+                        }}
+                      >
+                        <span>{track.label}</span>
+                        {track.forced && <small>Forced</small>}
+                      </button>
+                    ))}
+                    {subtitleStatus === "unavailable" && <p>No compatible subtitle track is available.</p>}
+                  </div>
+                  <div className="subtitle-size-setting">
+                    <strong>Text size</strong>
+                    <div role="radiogroup" aria-label="Subtitle size">
+                      {SUBTITLE_SIZE_OPTIONS.map((option) => (
+                        <button
+                          key={option.value}
+                          role="radio"
+                          aria-checked={subtitleSize === option.value}
+                          className={subtitleSize === option.value ? "is-selected" : ""}
+                          onClick={() => setSubtitleSize(option.value)}
+                        >
+                          {option.label}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                </section>
+              )}
+            </div>
           )}
           <button onClick={toggleFullscreen} aria-label="Fullscreen"><PlayerIcon name="fullscreen" /></button>
         </div>

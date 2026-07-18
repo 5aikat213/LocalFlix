@@ -298,6 +298,8 @@ svg { width: 1.35rem; height: 1.35rem; fill: none; stroke: currentColor; stroke-
 .round-button { display: grid; width: 3rem; aspect-ratio: 1; place-items: center; border: 1px solid #858991; border-radius: 50%; background: rgba(20,22,27,.76); cursor: pointer; }
 .round-button:hover { background: #3a3e46; }
 .close-button { position: absolute; z-index: 5; top: 1.15rem; right: 1.15rem; border: 0; background: #111318; }
+.preview-sound-button { position: absolute; z-index: 5; top: 1.15rem; right: 4.75rem; background: rgba(17,19,24,.86); }
+.preview-sound-button.is-blocked { border-color: #f0c66f; color: #f7d992; }
 .similar-button { min-height: 3rem; }
 .similar-button svg { color: #ffd6d8; }
 .detail-body { display: grid; grid-template-columns: 1.5fr .85fr; gap: 3rem; padding: 2rem clamp(1.4rem, 5vw, 3.4rem) 3rem; }
@@ -385,6 +387,10 @@ svg { width: 1.35rem; height: 1.35rem; fill: none; stroke: currentColor; stroke-
 }
 .player-shell.controls-hidden { cursor: none; }
 .player-shell video { width: 100%; height: 100%; display: block; object-fit: contain; background: #000; }
+.player-shell video::cue { color: #fff; background: rgba(0,0,0,.78); font-family: Inter, "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: 650; text-shadow: 0 2px 5px #000; }
+.player-shell.subtitle-size-small video::cue { font-size: 2.5vh; }
+.player-shell.subtitle-size-medium video::cue { font-size: 3.5vh; }
+.player-shell.subtitle-size-large video::cue { font-size: 4.7vh; }
 .player-topbar {
   position: absolute;
   z-index: 3;
@@ -447,9 +453,35 @@ svg { width: 1.35rem; height: 1.35rem; fill: none; stroke: currentColor; stroke-
 .player-spacer { flex: 1; }
 .next-episode { display: grid; justify-items: end; margin-right: .8rem; color: #b8bbc1; font-size: .68rem; }
 .next-episode strong { color: #fff; font-size: .78rem; }
-.caption-picker { position: relative; display: grid; width: 3rem; aspect-ratio: 1; place-items: center; }
-.caption-picker svg { pointer-events: none; }
-.caption-picker select { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
+.subtitle-control { position: relative; }
+.caption-button.is-active { color: #fff; background: rgba(229,9,20,.72); }
+.subtitle-menu {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + 1rem);
+  width: min(20rem, calc(100vw - 2rem));
+  border: 1px solid #3d4149;
+  border-radius: .45rem;
+  padding: .65rem;
+  background: rgba(17,19,24,.97);
+  box-shadow: 0 18px 55px #000c;
+  backdrop-filter: blur(18px);
+}
+.subtitle-menu-heading { display: flex; align-items: center; justify-content: space-between; padding: .45rem .55rem .7rem; }
+.subtitle-menu-heading strong, .subtitle-size-setting > strong { font-size: .76rem; letter-spacing: .08em; text-transform: uppercase; }
+.subtitle-menu-heading span { color: var(--muted); font-size: .68rem; }
+.subtitle-track-options { display: grid; max-height: 14rem; overflow-y: auto; }
+.player-control-row .subtitle-menu button { width: auto; min-height: 2.55rem; aspect-ratio: auto; border-radius: .25rem; padding: .55rem .65rem; text-align: left; }
+.subtitle-track-options button { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.subtitle-track-options button::after { content: ""; width: .5rem; aspect-ratio: 1; flex: 0 0 auto; border: 1px solid #777c85; border-radius: 50%; }
+.subtitle-track-options button.is-selected { background: #2b2f36; }
+.subtitle-track-options button.is-selected::after { border-color: #fff; background: #fff; box-shadow: inset 0 0 0 2px #2b2f36; }
+.subtitle-track-options small { margin-left: auto; color: var(--muted); font-size: .58rem; text-transform: uppercase; }
+.subtitle-track-options p { margin: .65rem; color: var(--muted); font-size: .72rem; line-height: 1.4; }
+.subtitle-size-setting { margin-top: .55rem; border-top: 1px solid #343840; padding: .85rem .55rem .3rem; }
+.subtitle-size-setting > div { display: grid; grid-template-columns: repeat(3, 1fr); gap: .35rem; margin-top: .65rem; }
+.player-control-row .subtitle-size-setting button { min-height: 2.25rem; padding: .35rem; color: var(--muted); font-size: .7rem; text-align: center; }
+.player-control-row .subtitle-size-setting button.is-selected { background: #fff; color: #08090b; font-weight: 750; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
 .player-center-play {
   position: absolute;
