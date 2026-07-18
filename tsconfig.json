@@ -1,0 +1,10 @@
+{
+  "files": [],
+  "references": [
+    { "path": "packages/config" },
+    { "path": "packages/catalog" },
+    { "path": "packages/database" },
+    { "path": "apps/worker" },
+    { "path": "apps/web" }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "@localflix/worker",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "worker": "tsx src/main.ts worker",
+    "sync": "tsx src/main.ts sync",
+    "index": "tsx src/main.ts index",
+    "refresh-metadata": "tsx src/main.ts refresh-metadata",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@localflix/catalog": "*",
+    "@localflix/config": "*",
+    "@localflix/database": "*"
+  }
+}

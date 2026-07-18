@@ -1,0 +1,202 @@
+[
+  {
+    "kind": "movie",
+    "canonicalTitle": "Raiders of the Lost Ark",
+    "releaseYear": 1981,
+    "aliases": ["01 Indiana Jones And The Raiders Of The Lost Ark", "Indiana Jones and the Raiders of the Lost Ark"],
+    "overview": "Archaeologist and adventurer Indiana Jones races Nazi agents to recover the Ark of the Covenant before its power can be weaponized.",
+    "runtimeMinutes": 115,
+    "originalLanguage": "en",
+    "genres": ["Adventure", "Action"],
+    "collections": [{"name":"Indiana Jones Collection","kind":"franchise","position":1,"overview":"The globe-spanning adventures of archaeologist Indiana Jones."}],
+    "directors": ["Steven Spielberg"],
+    "cast": [{"name":"Harrison Ford","character":"Indiana Jones"},{"name":"Karen Allen","character":"Marion Ravenwood"},{"name":"Paul Freeman","character":"René Belloq"}],
+    "artwork": [{"kind":"poster","url":"https://media.themoviedb.org/t/p/original/ceG9VzoRAVGwivFU403Wc3AHRys.jpg","sourcePageUrl":"https://www.themoviedb.org/movie/85-raiders-of-the-lost-ark"},{"kind":"backdrop","url":"https://media.themoviedb.org/t/p/w1920_and_h800_multi_faces/zPACwR32amTNvzId9qyapCWXYDJ.jpg","sourcePageUrl":"https://www.themoviedb.org/movie/85-raiders-of-the-lost-ark"}], "trailers": [{"title":"Trailer","youtubeUrl":"https://www.youtube.com/watch?v=0xQSIdSRlAk","official":false}], "sourcePageUrls": ["https://en.wikipedia.org/wiki/Raiders_of_the_Lost_Ark"]
+  },
+  {
+    "kind": "movie", "canonicalTitle": "Indiana Jones and the Temple of Doom", "releaseYear": 1984,
+    "aliases": ["02 Indiana Jones And The Temple Of Doom"],
+    "overview": "Indiana Jones arrives in colonial India and uncovers a secret cult that has enslaved children and stolen a sacred stone.",
+    "runtimeMinutes": 118, "originalLanguage": "en", "genres": ["Adventure", "Action"], "collections": [{"name":"Indiana Jones Collection","kind":"franchise","position":2,"overview":"The globe-spanning adventures of archaeologist Indiana Jones."}], "directors": ["Steven Spielberg"],
+    "cast": [{"name":"Harrison Ford","character":"Indiana Jones"},{"name":"Kate Capshaw","character":"Willie Scott"},{"name":"Ke Huy Quan","character":"Short Round"}],
+    "artwork": [{"kind":"poster","url":"https://media.themoviedb.org/t/p/original/gpdVNUaa4LhRMLfJOPj1AZdhAZ3.jpg","sourcePageUrl":"https://www.themoviedb.org/movie/87-indiana-jones-and-the-temple-of-doom"},{"kind":"backdrop","url":"https://media.themoviedb.org/t/p/w1920_and_h800_multi_faces/f133nWlU6yUkZqqwcCXCbTEJWHr.jpg","sourcePageUrl":"https://www.themoviedb.org/movie/87-indiana-jones-and-the-temple-of-doom"}], "trailers": [{"title":"Trailer","youtubeUrl":"https://www.youtube.com/watch?v=WBdyLyijZhU","official":false}], "sourcePageUrls": ["https://en.wikipedia.org/wiki/Indiana_Jones_and_the_Temple_of_Doom"]
+  },
+  {
+    "kind": "movie", "canonicalTitle": "Indiana Jones and the Last Crusade", "releaseYear": 1989,
+    "aliases": ["03 Indiana Jones And The Last Crusade"],
+    "overview": "Indiana Jones searches for his missing father and the Holy Grail while racing against Nazis determined to claim the relic.",
+    "runtimeMinutes": 127, "originalLanguage": "en", "genres": ["Adventure", "Action"], "collections": [{"name":"Indiana Jones Collection","kind":"franchise","position":3,"overview":"The globe-spanning adventures of archaeologist Indiana Jones."}], "directors": ["Steven Spielberg"],
+    "cast": [{"name":"Harrison Ford","character":"Indiana Jones"},{"name":"Sean Connery","character":"Henry Jones Sr."},{"name":"Alison Doody","character":"Elsa Schneider"}],
+    "artwork": [{"kind":"poster","url":"https://media.themoviedb.org/t/p/original/sizg1AU8f8JDZX4QIgE4pjUMBvx.jpg","sourcePageUrl":"https://www.themoviedb.org/movie/89-indiana-jones-and-the-last-crusade"},{"kind":"backdrop","url":"https://media.themoviedb.org/t/p/w1920_and_h800_multi_faces/12fvZHskx57kQfNEUXJ3v0flWYQ.jpg","sourcePageUrl":"https://www.themoviedb.org/movie/89-indiana-jones-and-the-last-crusade"}], "trailers": [{"title":"Trailer","youtubeUrl":"https://www.youtube.com/watch?v=GRfckj3ETh0","official":false}], "sourcePageUrls": ["https://en.wikipedia.org/wiki/Indiana_Jones_and_the_Last_Crusade"]
+  },
+  {
+    "kind": "movie", "canonicalTitle": "Indiana Jones and the Kingdom of the Crystal Skull", "releaseYear": 2008,
+    "aliases": ["04 Indiana Jones And The Kingdom Of The Crystal Skull"],
+    "overview": "At the height of the Cold War, Indiana Jones is drawn into a Soviet hunt for a mysterious crystal skull with extraordinary power.",
+    "runtimeMinutes": 122, "originalLanguage": "en", "genres": ["Adventure", "Action"], "collections": [{"name":"Indiana Jones Collection","kind":"franchise","position":4,"overview":"The globe-spanning adventures of archaeologist Indiana Jones."}], "directors": ["Steven Spielberg"],
+    "cast": [{"name":"Harrison Ford","character":"Indiana Jones"},{"name":"Cate Blanchett","character":"Irina Spalko"},{"name":"Shia LaBeouf","character":"Mutt Williams"}],
+    "artwork": [{"kind":"poster","url":"https://media.themoviedb.org/t/p/original/56As6XEM1flWvprX4LgkPl8ii4K.jpg","sourcePageUrl":"https://www.themoviedb.org/movie/217-indiana-jones-and-the-kingdom-of-the-crystal-skull"},{"kind":"backdrop","url":"https://media.themoviedb.org/t/p/w1920_and_h800_multi_faces/p96949hcwUG2BwE6MgKmw0uYNCx.jpg","sourcePageUrl":"https://www.themoviedb.org/movie/217-indiana-jones-and-the-kingdom-of-the-crystal-skull"}], "trailers": [{"title":"Trailer","youtubeUrl":"https://www.youtube.com/watch?v=kTJy1rFBtVw","official":false}], "sourcePageUrls": ["https://en.wikipedia.org/wiki/Indiana_Jones_and_the_Kingdom_of_the_Crystal_Skull"]
+  },
+  {
+    "kind": "movie", "canonicalTitle": "Babylon", "releaseYear": 2022, "aliases": [],
+    "overview": "Ambition, excess, and reinvention collide as several lives rise and fall during Hollywood's turbulent transition from silent pictures to sound.",
+    "runtimeMinutes": 189, "originalLanguage": "en", "genres": ["Drama", "Comedy"], "directors": ["Damien Chazelle"],
+    "cast": [{"name":"Brad Pitt","character":"Jack Conrad"},{"name":"Margot Robbie","character":"Nellie LaRoy"},{"name":"Diego Calva","character":"Manny Torres"}],
+    "artwork": [{"kind":"poster","url":"https://media.themoviedb.org/t/p/original/wjOHjWCUE0YzDiEzKv8AfqHj3ir.jpg","sourcePageUrl":"https://www.themoviedb.org/movie/615777-babylon"},{"kind":"backdrop","url":"https://media.themoviedb.org/t/p/w1920_and_h800_multi_faces/5fxTB08O7CW1hAcN2MWOKodp1h1.jpg","sourcePageUrl":"https://www.themoviedb.org/movie/615777-babylon"}], "trailers": [{"title":"Trailer","youtubeUrl":"https://www.youtube.com/watch?v=OumYv1aE1VI","official":false}], "sourcePageUrls": ["https://en.wikipedia.org/wiki/Babylon_(2022_film)"]
+  },
+  {
+    "kind": "movie", "canonicalTitle": "Before Sunrise", "releaseYear": 1995, "aliases": [],
+    "overview": "Two young strangers meet on a train and spend one night walking through Vienna, sharing ideas, uncertainty, and an unexpected connection.",
+    "runtimeMinutes": 101, "originalLanguage": "en", "genres": ["Romance", "Drama"], "collections": [{"name":"Before Trilogy","kind":"curated","position":1,"overview":"Jesse and Céline's relationship observed across decades."}], "directors": ["Richard Linklater"],
+    "cast": [{"name":"Ethan Hawke","character":"Jesse"},{"name":"Julie Delpy","character":"Céline"}],
+    "artwork": [{"kind":"poster","url":"https://media.themoviedb.org/t/p/original/kf1Jb1c2JAOqjuzA3H4oDM263uB.jpg","sourcePageUrl":"https://www.themoviedb.org/movie/76-before-sunrise"},{"kind":"backdrop","url":"https://media.themoviedb.org/t/p/w1920_and_h800_multi_faces/qA2TyqPldTtoTVY3LKrNIG5g6bH.jpg","sourcePageUrl":"https://www.themoviedb.org/movie/76-before-sunrise"}], "trailers": [{"title":"Trailer","youtubeUrl":"https://www.youtube.com/watch?v=jGvcbSabADM","official":false}], "sourcePageUrls": ["https://en.wikipedia.org/wiki/Before_Sunrise"]
+  },
+  {
+    "kind": "movie", "canonicalTitle": "Before Sunset", "releaseYear": 2004, "aliases": [],
+    "overview": "Nine years after Vienna, Jesse and Céline meet again in Paris and confront the lives they built after their brief night together.",
+    "runtimeMinutes": 80, "originalLanguage": "en", "genres": ["Romance", "Drama"], "collections": [{"name":"Before Trilogy","kind":"curated","position":2,"overview":"Jesse and Céline's relationship observed across decades."}], "directors": ["Richard Linklater"],
+    "cast": [{"name":"Ethan Hawke","character":"Jesse"},{"name":"Julie Delpy","character":"Céline"}],
+    "artwork": [{"kind":"poster","url":"https://media.themoviedb.org/t/p/original/4sW5XH9ZfYXpvFzev00S1IGAEbg.jpg","sourcePageUrl":"https://www.themoviedb.org/movie/80-before-sunset"},{"kind":"backdrop","url":"https://media.themoviedb.org/t/p/w1920_and_h800_multi_faces/tcZi0LQc5iu2u6i5aOWyj9NBBvl.jpg","sourcePageUrl":"https://www.themoviedb.org/movie/80-before-sunset"}], "trailers": [{"title":"Trailer","youtubeUrl":"https://www.youtube.com/watch?v=jx0UWbMMZOQ","official":false}], "sourcePageUrls": ["https://en.wikipedia.org/wiki/Before_Sunset"]
+  },
+  {
+    "kind": "movie", "canonicalTitle": "Before Midnight", "releaseYear": 2013, "aliases": [],
+    "overview": "Nearly two decades after their first meeting, Jesse and Céline face the accumulated strain, intimacy, and compromise of a life together.",
+    "runtimeMinutes": 109, "originalLanguage": "en", "genres": ["Romance", "Drama"], "collections": [{"name":"Before Trilogy","kind":"curated","position":3,"overview":"Jesse and Céline's relationship observed across decades."}], "directors": ["Richard Linklater"],
+    "cast": [{"name":"Ethan Hawke","character":"Jesse"},{"name":"Julie Delpy","character":"Céline"}],
+    "artwork": [{"kind":"poster","url":"https://media.themoviedb.org/t/p/original/qbGKJmNUroDz75kh5Oafoall89e.jpg","sourcePageUrl":"https://www.themoviedb.org/movie/132344-before-midnight"},{"kind":"backdrop","url":"https://media.themoviedb.org/t/p/w1920_and_h800_multi_faces/crdW75sDNYM0ddjFyrcg6V59qdP.jpg","sourcePageUrl":"https://www.themoviedb.org/movie/132344-before-midnight"}], "trailers": [{"title":"Trailer","youtubeUrl":"https://www.youtube.com/watch?v=NRVLVPWzeek","official":false}], "sourcePageUrls": ["https://en.wikipedia.org/wiki/Before_Midnight_(film)"]
+  },
+  {
+    "kind": "movie", "canonicalTitle": "Dawn of the Planet of the Apes", "releaseYear": 2014, "aliases": [],
+    "overview": "A fragile peace between a growing ape community and human survivors collapses as fear and betrayal push both sides toward war.",
+    "runtimeMinutes": 130, "originalLanguage": "en", "genres": ["Science Fiction", "Action", "Drama"], "directors": ["Matt Reeves"],
+    "cast": [{"name":"Andy Serkis","character":"Caesar"},{"name":"Jason Clarke","character":"Malcolm"},{"name":"Keri Russell","character":"Ellie"}],
+    "artwork": [{"kind":"poster","url":"https://media.themoviedb.org/t/p/original/mSmAc9G25fhOHH45SLEeagR0qi7.jpg","sourcePageUrl":"https://www.themoviedb.org/movie/119450-dawn-of-the-planet-of-the-apes"},{"kind":"backdrop","url":"https://media.themoviedb.org/t/p/w1920_and_h800_multi_faces/3SozaNPOYUadcmTPgndDibMyDNC.jpg","sourcePageUrl":"https://www.themoviedb.org/movie/119450-dawn-of-the-planet-of-the-apes"}], "trailers": [{"title":"Trailer","youtubeUrl":"https://www.youtube.com/watch?v=DpSaTrW4leg","official":false}], "sourcePageUrls": ["https://en.wikipedia.org/wiki/Dawn_of_the_Planet_of_the_Apes"]
+  },
+  {
+    "kind": "movie", "canonicalTitle": "Dial M for Murder", "releaseYear": 1954, "aliases": ["Dial M For Murder"],
+    "overview": "A former tennis player plots the perfect murder of his wealthy wife, only to improvise when the carefully arranged crime goes wrong.",
+    "runtimeMinutes": 105, "originalLanguage": "en", "genres": ["Thriller", "Crime"], "directors": ["Alfred Hitchcock"],
+    "cast": [{"name":"Ray Milland","character":"Tony Wendice"},{"name":"Grace Kelly","character":"Margot Wendice"},{"name":"Robert Cummings","character":"Mark Halliday"}],
+    "artwork": [{"kind":"poster","url":"https://media.themoviedb.org/t/p/original/2gDCAgl2iBQNuJuk6p2xtuS1ewg.jpg","sourcePageUrl":"https://www.themoviedb.org/movie/521-dial-m-for-murder"},{"kind":"backdrop","url":"https://media.themoviedb.org/t/p/w1920_and_h800_multi_faces/mD6EAjfIr7CLdFlCIJjh7CJeWX3.jpg","sourcePageUrl":"https://www.themoviedb.org/movie/521-dial-m-for-murder"}], "trailers": [{"title":"Trailer","youtubeUrl":"https://www.youtube.com/watch?v=kR_NZuW28XE","official":false}], "sourcePageUrls": ["https://en.wikipedia.org/wiki/Dial_M_for_Murder"]
+  },
+  {
+    "kind": "movie", "canonicalTitle": "Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb", "releaseYear": 1964,
+    "aliases": ["Dr Strangelove Stanley Kubrick 45th Anniversary Edition", "Dr Strangelove"],
+    "overview": "A rogue American general triggers a nuclear crisis, leaving politicians and officers scrambling through the absurd machinery of mutually assured destruction.",
+    "runtimeMinutes": 95, "originalLanguage": "en", "genres": ["Comedy", "War"], "directors": ["Stanley Kubrick"],
+    "cast": [{"name":"Peter Sellers","character":"Group Capt. Lionel Mandrake / President Merkin Muffley / Dr. Strangelove"},{"name":"George C. Scott","character":"Gen. Buck Turgidson"},{"name":"Sterling Hayden","character":"Brig. Gen. Jack D. Ripper"}],
+    "artwork": [{"kind":"poster","url":"https://media.themoviedb.org/t/p/original/6x7MzQ6BOMlRzam1StcmPO9v61g.jpg","sourcePageUrl":"https://www.themoviedb.org/movie/935-dr-strangelove-or-how-i-learned-to-stop-worrying-and-love-the-bomb"},{"kind":"backdrop","url":"https://media.themoviedb.org/t/p/w1920_and_h800_multi_faces/7i0L2ee4Iy0aXV6vR5u1ZmblOrx.jpg","sourcePageUrl":"https://www.themoviedb.org/movie/935-dr-strangelove-or-how-i-learned-to-stop-worrying-and-love-the-bomb"}], "trailers": [{"title":"Trailer","youtubeUrl":"https://www.youtube.com/watch?v=XjLsIWZdWmc","official":false}], "sourcePageUrls": ["https://en.wikipedia.org/wiki/Dr._Strangelove"]
+  },
+  {
+    "kind": "movie", "canonicalTitle": "Insomnia", "releaseYear": 2002, "aliases": [],
+    "overview": "A veteran detective investigating a murder in an Alaskan town enters a dangerous psychological bargain while sleeplessness erodes his judgment.",
+    "runtimeMinutes": 118, "originalLanguage": "en", "genres": ["Thriller", "Crime", "Drama"], "directors": ["Christopher Nolan"],
+    "cast": [{"name":"Al Pacino","character":"Will Dormer"},{"name":"Robin Williams","character":"Walter Finch"},{"name":"Hilary Swank","character":"Ellie Burr"}],
+    "artwork": [{"kind":"poster","url":"https://media.themoviedb.org/t/p/original/riVXh3EimGO0y5dgQxEWPRy5Itg.jpg","sourcePageUrl":"https://www.themoviedb.org/movie/320-insomnia"},{"kind":"backdrop","url":"https://media.themoviedb.org/t/p/w1920_and_h800_multi_faces/jU8MC5uSgBkZXyZYGtZgMsMsfeN.jpg","sourcePageUrl":"https://www.themoviedb.org/movie/320-insomnia"}], "trailers": [{"title":"Trailer","youtubeUrl":"https://www.youtube.com/watch?v=emIHzg4VH8A","official":false}], "sourcePageUrls": ["https://en.wikipedia.org/wiki/Insomnia_(2002_film)"]
+  },
+  {
+    "kind": "movie", "canonicalTitle": "Interstellar", "releaseYear": 2014, "aliases": [],
+    "overview": "With Earth becoming uninhabitable, a former pilot joins a mission through a wormhole to search for a future home for humanity.",
+    "runtimeMinutes": 169, "originalLanguage": "en", "genres": ["Science Fiction", "Drama", "Adventure"], "directors": ["Christopher Nolan"],
+    "cast": [{"name":"Matthew McConaughey","character":"Cooper"},{"name":"Anne Hathaway","character":"Amelia Brand"},{"name":"Jessica Chastain","character":"Murph"}],
+    "artwork": [{"kind":"poster","url":"https://media.themoviedb.org/t/p/original/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg","sourcePageUrl":"https://www.themoviedb.org/movie/157336-interstellar"},{"kind":"backdrop","url":"https://media.themoviedb.org/t/p/w1920_and_h800_multi_faces/2ssWTSVklAEc98frZUQhgtGHx7s.jpg","sourcePageUrl":"https://www.themoviedb.org/movie/157336-interstellar"}], "trailers": [{"title":"Official Trailer","youtubeUrl":"https://www.youtube.com/watch?v=zSWdZVtXT7E","official":true}], "sourcePageUrls": ["https://en.wikipedia.org/wiki/Interstellar_(film)"]
+  },
+  {
+    "kind": "movie", "canonicalTitle": "John Wick: Chapter 2", "releaseYear": 2017, "aliases": ["John Wick Chapter 2"],
+    "overview": "An old blood oath forces John Wick back into the criminal underworld, where a contract turns every assassin in Rome against him.",
+    "runtimeMinutes": 122, "originalLanguage": "en", "genres": ["Action", "Thriller", "Crime"], "collections": [{"name":"John Wick Collection","kind":"franchise","position":2,"overview":"The underworld odyssey of legendary assassin John Wick."}], "directors": ["Chad Stahelski"],
+    "cast": [{"name":"Keanu Reeves","character":"John Wick"},{"name":"Common","character":"Cassian"},{"name":"Laurence Fishburne","character":"The Bowery King"}],
+    "artwork": [{"kind":"poster","url":"https://media.themoviedb.org/t/p/original/hXWBc0ioZP3cN4zCu6SN3YHXZVO.jpg","sourcePageUrl":"https://www.themoviedb.org/movie/324552-john-wick-chapter-2"},{"kind":"backdrop","url":"https://media.themoviedb.org/t/p/w1920_and_h800_multi_faces/r17jFHAemzcWPPtoO0UxjIX0xas.jpg","sourcePageUrl":"https://www.themoviedb.org/movie/324552-john-wick-chapter-2"}], "trailers": [{"title":"Trailer","youtubeUrl":"https://www.youtube.com/watch?v=LZrX9mffH8Y","official":false}], "sourcePageUrls": ["https://en.wikipedia.org/wiki/John_Wick:_Chapter_2"]
+  },
+  {
+    "kind": "movie", "canonicalTitle": "John Wick: Chapter 3 – Parabellum", "releaseYear": 2019, "aliases": ["John Wick Chapter 3 Parabellum"],
+    "overview": "Declared excommunicado with a global bounty on his head, John Wick fights through New York while seeking a way to survive the High Table.",
+    "runtimeMinutes": 131, "originalLanguage": "en", "genres": ["Action", "Thriller", "Crime"], "collections": [{"name":"John Wick Collection","kind":"franchise","position":3,"overview":"The underworld odyssey of legendary assassin John Wick."}], "directors": ["Chad Stahelski"],
+    "cast": [{"name":"Keanu Reeves","character":"John Wick"},{"name":"Halle Berry","character":"Sofia"},{"name":"Ian McShane","character":"Winston"}],
+    "artwork": [{"kind":"poster","url":"https://media.themoviedb.org/t/p/original/ziEuG1essDuWuC5lpWUaw1uXY2O.jpg","sourcePageUrl":"https://www.themoviedb.org/movie/458156-john-wick-chapter-3-parabellum"},{"kind":"backdrop","url":"https://media.themoviedb.org/t/p/w1920_and_h800_multi_faces/vVpEOvdxVBP2aV166j5Xlvb5Cdc.jpg","sourcePageUrl":"https://www.themoviedb.org/movie/458156-john-wick-chapter-3-parabellum"}], "trailers": [{"title":"Trailer","youtubeUrl":"https://www.youtube.com/watch?v=pU8-7BX9uxs","official":false}], "sourcePageUrls": ["https://en.wikipedia.org/wiki/John_Wick:_Chapter_3_%E2%80%93_Parabellum"]
+  },
+  {
+    "kind": "movie", "canonicalTitle": "John Wick: Chapter 4", "releaseYear": 2023, "aliases": ["John Wick Chapter 4"],
+    "overview": "John Wick challenges the High Table across Osaka, Berlin, and Paris in a final campaign for freedom from its deadly rules.",
+    "runtimeMinutes": 169, "originalLanguage": "en", "genres": ["Action", "Thriller", "Crime"], "collections": [{"name":"John Wick Collection","kind":"franchise","position":4,"overview":"The underworld odyssey of legendary assassin John Wick."}], "directors": ["Chad Stahelski"],
+    "cast": [{"name":"Keanu Reeves","character":"John Wick"},{"name":"Donnie Yen","character":"Caine"},{"name":"Bill Skarsgård","character":"Marquis Vincent Bisset de Gramont"}],
+    "artwork": [{"kind":"poster","url":"https://media.themoviedb.org/t/p/original/vZloFAK7NmvMGKE7VkF5UHaz0I.jpg","sourcePageUrl":"https://www.themoviedb.org/movie/603692-john-wick-chapter-4"},{"kind":"backdrop","url":"https://media.themoviedb.org/t/p/w1920_and_h800_multi_faces/7I6VUdPj6tQECNHdviJkUHD2u89.jpg","sourcePageUrl":"https://www.themoviedb.org/movie/603692-john-wick-chapter-4"}], "trailers": [{"title":"Official Trailer","youtubeUrl":"https://www.youtube.com/watch?v=qEVUtrk8_B4","official":true}], "sourcePageUrls": ["https://en.wikipedia.org/wiki/John_Wick:_Chapter_4"]
+  },
+  {
+    "kind": "movie", "canonicalTitle": "Killers of the Flower Moon", "releaseYear": 2023, "aliases": ["Killers Of The Flower Moon"],
+    "overview": "A series of murders targets members of the oil-rich Osage Nation in 1920s Oklahoma, exposing a conspiracy of greed, violence, and betrayal.",
+    "runtimeMinutes": 206, "originalLanguage": "en", "genres": ["Crime", "Drama", "History"], "directors": ["Martin Scorsese"],
+    "cast": [{"name":"Leonardo DiCaprio","character":"Ernest Burkhart"},{"name":"Lily Gladstone","character":"Mollie Burkhart"},{"name":"Robert De Niro","character":"William King Hale"}],
+    "artwork": [{"kind":"poster","url":"https://media.themoviedb.org/t/p/original/dB6Krk806zeqd0YNp2ngQ9zXteH.jpg","sourcePageUrl":"https://www.themoviedb.org/movie/466420-killers-of-the-flower-moon"},{"kind":"backdrop","url":"https://media.themoviedb.org/t/p/w1920_and_h800_multi_faces/acvE3RWjDLgvbL2RtcyzkrsAyNV.jpg","sourcePageUrl":"https://www.themoviedb.org/movie/466420-killers-of-the-flower-moon"}], "trailers": [{"title":"Trailer","youtubeUrl":"https://www.youtube.com/watch?v=1oZUCkJEuvo","official":false}], "sourcePageUrls": ["https://en.wikipedia.org/wiki/Killers_of_the_Flower_Moon_(film)"]
+  },
+  {
+    "kind": "movie", "canonicalTitle": "Memento", "releaseYear": 2000, "aliases": [],
+    "overview": "A man unable to form new memories uses photographs, notes, and tattoos to hunt for his wife's killer while the truth slips beyond his grasp.",
+    "runtimeMinutes": 113, "originalLanguage": "en", "genres": ["Mystery", "Thriller", "Crime"], "directors": ["Christopher Nolan"],
+    "cast": [{"name":"Guy Pearce","character":"Leonard Shelby"},{"name":"Carrie-Anne Moss","character":"Natalie"},{"name":"Joe Pantoliano","character":"Teddy"}],
+    "artwork": [{"kind":"poster","url":"https://media.themoviedb.org/t/p/original/fKTPH2WvH8nHTXeBYBVhawtRqtR.jpg","sourcePageUrl":"https://www.themoviedb.org/movie/77-memento"},{"kind":"backdrop","url":"https://media.themoviedb.org/t/p/w1920_and_h800_multi_faces/7Wev9JMo6R5XAfz2KDvXb7oPMmy.jpg","sourcePageUrl":"https://www.themoviedb.org/movie/77-memento"}], "trailers": [{"title":"Trailer","youtubeUrl":"https://www.youtube.com/watch?v=Rq9eM4ZXRgs","official":false}], "sourcePageUrls": ["https://en.wikipedia.org/wiki/Memento_(film)"]
+  },
+  {
+    "kind": "movie", "canonicalTitle": "Reservoir Dogs", "releaseYear": 1992, "aliases": [],
+    "overview": "After a jewelry heist collapses into an ambush, surviving criminals gather in a warehouse and suspect that one of them is an informant.",
+    "runtimeMinutes": 99, "originalLanguage": "en", "genres": ["Crime", "Thriller"], "directors": ["Quentin Tarantino"],
+    "cast": [{"name":"Harvey Keitel","character":"Mr. White"},{"name":"Tim Roth","character":"Mr. Orange"},{"name":"Michael Madsen","character":"Mr. Blonde"}],
+    "artwork": [{"kind":"poster","url":"https://media.themoviedb.org/t/p/original/xi8Iu6qyTfyZVDVy60raIOYJJmk.jpg","sourcePageUrl":"https://www.themoviedb.org/movie/500-reservoir-dogs"},{"kind":"backdrop","url":"https://media.themoviedb.org/t/p/w1920_and_h800_multi_faces/jwt159hXWA9Q5xpBo8hWb3zwLi7.jpg","sourcePageUrl":"https://www.themoviedb.org/movie/500-reservoir-dogs"}], "trailers": [{"title":"Trailer","youtubeUrl":"https://www.youtube.com/watch?v=2KLZ4fSXtgI","official":false}], "sourcePageUrls": ["https://en.wikipedia.org/wiki/Reservoir_Dogs"]
+  },
+  {
+    "kind": "movie", "canonicalTitle": "Star Wars: Episode I – The Phantom Menace", "releaseYear": 1999, "aliases": ["Star Wars Episode 1 The Phantom Menace"],
+    "overview": "Two Jedi protect a young queen, encounter a gifted boy named Anakin Skywalker, and confront a resurgent Sith threat.",
+    "runtimeMinutes": 136, "originalLanguage": "en", "genres": ["Science Fiction", "Adventure", "Action"], "collections": [{"name":"Star Wars · Skywalker Saga","kind":"universe","position":1,"overview":"The generations-spanning Skywalker story within the Star Wars universe."}], "directors": ["George Lucas"],
+    "cast": [{"name":"Liam Neeson","character":"Qui-Gon Jinn"},{"name":"Ewan McGregor","character":"Obi-Wan Kenobi"},{"name":"Natalie Portman","character":"Padmé Amidala"}],
+    "artwork": [{"kind":"poster","url":"https://media.themoviedb.org/t/p/original/xQzMnuiv81d0gfUIVstuleNutjA.jpg","sourcePageUrl":"https://www.themoviedb.org/movie/1893-star-wars-episode-i-the-phantom-menace"},{"kind":"backdrop","url":"https://media.themoviedb.org/t/p/w1920_and_h800_multi_faces/3TeGmKJfkik1D1rIoqGb1aR4k9c.jpg","sourcePageUrl":"https://www.themoviedb.org/movie/1893-star-wars-episode-i-the-phantom-menace"}], "trailers": [{"title":"Trailer","youtubeUrl":"https://www.youtube.com/watch?v=J3kyYFHdRsM","official":false}], "sourcePageUrls": ["https://en.wikipedia.org/wiki/Star_Wars:_Episode_I_%E2%80%93_The_Phantom_Menace"]
+  },
+  {
+    "kind": "movie", "canonicalTitle": "Star Wars: Episode II – Attack of the Clones", "releaseYear": 2002, "aliases": ["Star Wars Episode 2 Attack of the Clones"],
+    "overview": "As the Republic moves toward war, Obi-Wan uncovers a clone army while Anakin Skywalker grows closer to Senator Padmé Amidala.",
+    "runtimeMinutes": 142, "originalLanguage": "en", "genres": ["Science Fiction", "Adventure", "Action"], "collections": [{"name":"Star Wars · Skywalker Saga","kind":"universe","position":2,"overview":"The generations-spanning Skywalker story within the Star Wars universe."}], "directors": ["George Lucas"],
+    "cast": [{"name":"Ewan McGregor","character":"Obi-Wan Kenobi"},{"name":"Hayden Christensen","character":"Anakin Skywalker"},{"name":"Natalie Portman","character":"Padmé Amidala"}],
+    "artwork": [{"kind":"poster","url":"https://media.themoviedb.org/t/p/original/oZNPzxqM2s5DyVWab09NTQScDQt.jpg","sourcePageUrl":"https://www.themoviedb.org/movie/1894-star-wars-episode-ii-attack-of-the-clones"},{"kind":"backdrop","url":"https://media.themoviedb.org/t/p/w1920_and_h800_multi_faces/abwxHfymXGAbbH3lo9PDEJEfvtW.jpg","sourcePageUrl":"https://www.themoviedb.org/movie/1894-star-wars-episode-ii-attack-of-the-clones"}], "trailers": [{"title":"Trailer","youtubeUrl":"https://www.youtube.com/watch?v=1fR7GBrdkNU","official":false}], "sourcePageUrls": ["https://en.wikipedia.org/wiki/Star_Wars:_Episode_II_%E2%80%93_Attack_of_the_Clones"]
+  },
+  {
+    "kind": "movie", "canonicalTitle": "Star Wars: Episode III – Revenge of the Sith", "releaseYear": 2005, "aliases": ["Star Wars Episode 3 Revenge of the Sith"],
+    "overview": "The Clone Wars end as Anakin Skywalker falls under Palpatine's influence and the Galactic Republic is transformed into an empire.",
+    "runtimeMinutes": 140, "originalLanguage": "en", "genres": ["Science Fiction", "Adventure", "Action"], "collections": [{"name":"Star Wars · Skywalker Saga","kind":"universe","position":3,"overview":"The generations-spanning Skywalker story within the Star Wars universe."}], "directors": ["George Lucas"],
+    "cast": [{"name":"Ewan McGregor","character":"Obi-Wan Kenobi"},{"name":"Hayden Christensen","character":"Anakin Skywalker"},{"name":"Natalie Portman","character":"Padmé Amidala"}],
+    "artwork": [{"kind":"poster","url":"https://media.themoviedb.org/t/p/original/xfSAoBEm9MNBjmlNcDYLvLSMlnq.jpg","sourcePageUrl":"https://www.themoviedb.org/movie/1895-star-wars-episode-iii-revenge-of-the-sith"},{"kind":"backdrop","url":"https://media.themoviedb.org/t/p/w1920_and_h800_multi_faces/jniabJVBSW3EqLlyhjxWCZjVkiE.jpg","sourcePageUrl":"https://www.themoviedb.org/movie/1895-star-wars-episode-iii-revenge-of-the-sith"}], "trailers": [{"title":"Trailer","youtubeUrl":"https://www.youtube.com/watch?v=5UnjrG_N8hU","official":false}], "sourcePageUrls": ["https://en.wikipedia.org/wiki/Star_Wars:_Episode_III_%E2%80%93_Revenge_of_the_Sith"]
+  },
+  {
+    "kind": "movie", "canonicalTitle": "Star Wars", "releaseYear": 1977, "aliases": ["Star Wars Episode 4 A New Hope", "Star Wars: Episode IV – A New Hope"],
+    "overview": "Luke Skywalker joins a rebel mission to rescue Princess Leia and destroy the Galactic Empire's planet-killing Death Star.",
+    "runtimeMinutes": 121, "originalLanguage": "en", "genres": ["Science Fiction", "Adventure", "Action"], "collections": [{"name":"Star Wars · Skywalker Saga","kind":"universe","position":4,"overview":"The generations-spanning Skywalker story within the Star Wars universe."}], "directors": ["George Lucas"],
+    "cast": [{"name":"Mark Hamill","character":"Luke Skywalker"},{"name":"Harrison Ford","character":"Han Solo"},{"name":"Carrie Fisher","character":"Leia Organa"}],
+    "artwork": [{"kind":"poster","url":"https://media.themoviedb.org/t/p/original/6FfCtAuVAW8XJjZ7eWeLibRLWTw.jpg","sourcePageUrl":"https://www.themoviedb.org/movie/11-star-wars"},{"kind":"backdrop","url":"https://media.themoviedb.org/t/p/w1920_and_h800_multi_faces/yUiXA68FfQeA8cRBhd0Ao0jIRZt.jpg","sourcePageUrl":"https://www.themoviedb.org/movie/11-star-wars"}], "trailers": [{"title":"Trailer","youtubeUrl":"https://www.youtube.com/watch?v=XsS1yE2f-hE","official":false}], "sourcePageUrls": ["https://en.wikipedia.org/wiki/Star_Wars_(film)"]
+  },
+  {
+    "kind": "movie", "canonicalTitle": "The Empire Strikes Back", "releaseYear": 1980, "aliases": ["Star Wars Episode 5 The Empire Strikes Back", "Star Wars: Episode V – The Empire Strikes Back"],
+    "overview": "The Empire drives the Rebels from Hoth while Luke trains with Yoda and his friends flee Darth Vader across the galaxy.",
+    "runtimeMinutes": 124, "originalLanguage": "en", "genres": ["Science Fiction", "Adventure", "Action"], "collections": [{"name":"Star Wars · Skywalker Saga","kind":"universe","position":5,"overview":"The generations-spanning Skywalker story within the Star Wars universe."}], "directors": ["Irvin Kershner"],
+    "cast": [{"name":"Mark Hamill","character":"Luke Skywalker"},{"name":"Harrison Ford","character":"Han Solo"},{"name":"Carrie Fisher","character":"Leia Organa"}],
+    "artwork": [{"kind":"poster","url":"https://media.themoviedb.org/t/p/original/nNAeTmF4CtdSgMDplXTDPOpYzsX.jpg","sourcePageUrl":"https://www.themoviedb.org/movie/1891-the-empire-strikes-back"},{"kind":"backdrop","url":"https://media.themoviedb.org/t/p/w1920_and_h800_multi_faces/k9pshruhCpJAdH9RaGJO6jaWQ4X.jpg","sourcePageUrl":"https://www.themoviedb.org/movie/1891-the-empire-strikes-back"}], "trailers": [{"title":"Trailer","youtubeUrl":"https://www.youtube.com/watch?v=e0QkbuRaEDc","official":false}], "sourcePageUrls": ["https://en.wikipedia.org/wiki/The_Empire_Strikes_Back"]
+  },
+  {
+    "kind": "movie", "canonicalTitle": "Return of the Jedi", "releaseYear": 1983, "aliases": ["Star Wars Episode 6 Return of the Jedi", "Star Wars: Episode VI – Return of the Jedi"],
+    "overview": "The Rebels mount a final assault against a new Death Star as Luke Skywalker tries to redeem Darth Vader and defeat the Emperor.",
+    "runtimeMinutes": 132, "originalLanguage": "en", "genres": ["Science Fiction", "Adventure", "Action"], "collections": [{"name":"Star Wars · Skywalker Saga","kind":"universe","position":6,"overview":"The generations-spanning Skywalker story within the Star Wars universe."}], "directors": ["Richard Marquand"],
+    "cast": [{"name":"Mark Hamill","character":"Luke Skywalker"},{"name":"Harrison Ford","character":"Han Solo"},{"name":"Carrie Fisher","character":"Leia Organa"}],
+    "artwork": [{"kind":"poster","url":"https://media.themoviedb.org/t/p/original/jQYlydvHm3kUix1f8prMucrplhm.jpg","sourcePageUrl":"https://www.themoviedb.org/movie/1892-return-of-the-jedi"},{"kind":"backdrop","url":"https://media.themoviedb.org/t/p/w1920_and_h800_multi_faces/ziECpBRIyclmBNaFSWlvCfsKbMD.jpg","sourcePageUrl":"https://www.themoviedb.org/movie/1892-return-of-the-jedi"}], "trailers": [{"title":"Trailer","youtubeUrl":"https://www.youtube.com/watch?v=MAW1E3JIQZE","official":false}], "sourcePageUrls": ["https://en.wikipedia.org/wiki/Return_of_the_Jedi"]
+  },
+  {
+    "kind": "movie", "canonicalTitle": "Star Wars: The Last Jedi", "releaseYear": 2017, "aliases": ["Star Wars The Last Jedi"],
+    "overview": "Rey seeks Luke Skywalker's guidance while the Resistance races to survive the First Order and Kylo Ren deepens his hold on power.",
+    "runtimeMinutes": 152, "originalLanguage": "en", "genres": ["Science Fiction", "Adventure", "Action"], "collections": [{"name":"Star Wars · Skywalker Saga","kind":"universe","position":8,"overview":"The generations-spanning Skywalker story within the Star Wars universe."}], "directors": ["Rian Johnson"],
+    "cast": [{"name":"Mark Hamill","character":"Luke Skywalker"},{"name":"Carrie Fisher","character":"Leia Organa"},{"name":"Daisy Ridley","character":"Rey"}],
+    "artwork": [{"kind":"poster","url":"https://media.themoviedb.org/t/p/original/kOVEVeg59E0wsnXmF9nrh6OmWII.jpg","sourcePageUrl":"https://www.themoviedb.org/movie/181808-star-wars-the-last-jedi"},{"kind":"backdrop","url":"https://media.themoviedb.org/t/p/w1920_and_h800_multi_faces/bIUaCtWaRgd78SnoHJDI8TNf7Sd.jpg","sourcePageUrl":"https://www.themoviedb.org/movie/181808-star-wars-the-last-jedi"}], "trailers": [{"title":"Trailer","youtubeUrl":"https://www.youtube.com/watch?v=Q0CbN8sfihY","official":false}], "sourcePageUrls": ["https://en.wikipedia.org/wiki/Star_Wars:_The_Last_Jedi"]
+  },
+  {
+    "kind": "movie", "canonicalTitle": "The Day After", "releaseYear": 1983, "aliases": [],
+    "overview": "Ordinary people in and around Lawrence, Kansas confront the catastrophic human aftermath of a nuclear exchange between the superpowers.",
+    "runtimeMinutes": 127, "originalLanguage": "en", "genres": ["Drama", "Science Fiction", "War"], "directors": ["Nicholas Meyer"],
+    "cast": [{"name":"Jason Robards","character":"Dr. Russell Oakes"},{"name":"JoBeth Williams","character":"Nurse Nancy Bauer"},{"name":"Steve Guttenberg","character":"Stephen Klein"}],
+    "artwork": [{"kind":"poster","url":"https://media.themoviedb.org/t/p/original/brieV17D6R6HcubOqehLNYuxnvs.jpg","sourcePageUrl":"https://www.themoviedb.org/movie/7012-the-day-after"},{"kind":"backdrop","url":"https://media.themoviedb.org/t/p/w1920_and_h800_multi_faces/AfBGTLp9JtsWNUJC6rP1U1XCPCE.jpg","sourcePageUrl":"https://www.themoviedb.org/movie/7012-the-day-after"}], "trailers": [{"title":"Trailer","youtubeUrl":"https://www.youtube.com/watch?v=gIk6aBLCoHg","official":false}], "sourcePageUrls": ["https://en.wikipedia.org/wiki/The_Day_After"]
+  }
+]

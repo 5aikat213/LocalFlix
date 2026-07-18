@@ -1,0 +1,21 @@
+{
+  "name": "@localflix/catalog",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./playback": "./src/playback.ts",
+    "./subtitle-conversion": "./src/subtitle-conversion.ts"
+  },
+  "dependencies": {
+    "file-type": "22.0.1",
+    "image-size": "2.0.2",
+    "ipaddr.js": "2.2.0",
+    "zod": "4.4.3"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "dataDirectory": ".localflix",
+  "host": "127.0.0.1",
+  "port": 3000,
+  "movieDirectories": ["/path/to/Movies"],
+  "seriesDirectories": ["/path/to/Series"],
+  "scanOnStartup": true,
+  "workerConcurrency": 4,
+  "transcodeConcurrency": 1,
+  "openAiEnabled": false
+}
